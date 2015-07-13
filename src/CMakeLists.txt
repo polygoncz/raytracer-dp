@@ -4,4 +4,5 @@ project(Diplomka)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 
 set(SOURCE_FILES main.cpp)
-add_executable(Diplomka ${SOURCE_FILES} core/core.h core/geometry.h)
+include_directories(${CMAKE_SOURCE_DIR})
+add_executable(Diplomka ${SOURCE_FILES} core/geometry.cpp)

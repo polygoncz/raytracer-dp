@@ -9,9 +9,17 @@
 #include <algorithm>
 #include <cmath>
 
+#define EPSILON 0.00001f
+
 
 namespace tracer
 {
+
+class Point;
+
+class Vector;
+
+class Normal;
 
 /*!
  * Datovy typ realnych hodnot. Vychozi hodnota je float.
@@ -76,7 +84,7 @@ inline void swap(T& a, T& b)
  * \param a reference na první hodnotu
  * \param b reference na druhou hodnotu
  */
-inline Real Lerp(Real t, Real a, Real b)
+inline Real lerp(Real t, Real a, Real b)
 {
     return (1.f - t) * a + t * b;
 }
