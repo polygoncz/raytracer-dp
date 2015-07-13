@@ -3,6 +3,10 @@
 #include "core/core.h"
 #include "core/reference.h"
 
+
+namespace tracer
+{
+
 /*!
  * Třída uchovává atributy, které představují souhrn
  * informací o průsečíku paprsku s objektem ve scéně.
@@ -31,7 +35,9 @@ struct Intersection
     Vector hitPoint; ///< Souřadnice místa dopadu
     Vector normal; ///< Normála v místě dopadu
     Ray ray; ///< Paprsek, pro který se provádí výpočet
-    Reference <Material> material; ///< Reference na materiál objektu
+    Reference<Material> material; ///< Reference na materiál objektu
     int depth; ///< Hloubka rekurze
     float t; ///< hodnota parametru t v místě dopadu
 };
+
+}
