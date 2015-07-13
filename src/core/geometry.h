@@ -355,8 +355,8 @@ public:
     /*!
      * Konstruktor definující BBox pomocí dvou bodů.
      * Do pMin se vloží minimální složky a do pMax maximální složky z obou bodů.
-     * @param p1 reference na první bod
-     * @param p2 reference na druhý bod
+     * \param p1 reference na první bod
+     * \param p2 reference na druhý bod
      */
     BBox(const Vector& p1, const Vector& p2)
     {
@@ -364,17 +364,17 @@ public:
         pMax = Vector(max(p1.x, p2.x), max(p1.y, p2.y), max(p1.z, p2.z));
     }
 
-    /**
+    /*!
      * Kopírovací konstruktor.
      */
     BBox(const BBox& b)
             : pMin(b.pMin), pMax(b.pMax)
     { }
 
-    /**
+    /*!
      * Kontroluje, jestli bod leží uvnitř BBox.
-     * @param p kontrolovaný bod
-     * @return jestli bod leží uvnitř obalové BBox
+     * \param p kontrolovaný bod
+     * \return jestli bod leží uvnitř obalové BBox
      */
     bool isInside(const Vector& p) const
     {
@@ -383,10 +383,10 @@ public:
                 p.z >= pMin.z && p.z <= pMax.z);
     }
 
-    /**
+    /*!
      * Kontrolu, jestli dochází k překrytí dvou BBox.
-     * @param b kontrolovaný BBox
-     * @return jestli se dvě BBox překrývají
+     * \param b kontrolovaný BBox
+     * \return jestli se dvě BBox překrývají
      */
     bool isOverlaps(const BBox& b) const
     {
@@ -396,18 +396,18 @@ public:
         return (x && y && z);
     }
 
-    /**
+    /*!
      * Vypočítá diagonálu BBox.
-     ** @return Vector představující diagonálu
+     * \return Vector představující diagonálu
      */
     Vector diagonal() const
     {
         return pMax - pMin;
     }
 
-    /**
+    /*!
      * Zjišťuje, ve které ose je BBox nejrozměrnější.
-     * @return číslo osy (0 - x, 1 - y, 2 - z)
+     * \return číslo osy (0 - x, 1 - y, 2 - z)
      */
     int maxDimensionIndex() const
     {
@@ -420,16 +420,16 @@ public:
             return 2;
     }
 
-    /**
+    /*!
      * Metoda vypočítá střed (centroid) BBox.
-     * @return Point reprezentující střed BBox
+     * \return Point reprezentující střed BBox
      */
     Vector centroid() const
     {
         return (pMin + pMax) / 2.f;
     }
 
-    /**
+    /*!
      * Provede sjednocení BBox a bodu.
      * @param b instance třídy BBox
      * @param p instance třídy Point
@@ -437,25 +437,25 @@ public:
      */
     friend BBox unite(const BBox& b, const Vector& p);
 
-    /**
+    /*!
      * Provede sjednocení BBox a bodu.
-     * @param b instance třídy BBox
-     * @param b2 instance třídy BBox
-     * @return BBox vzniknutý sjednocením
+     * \param b instance třídy BBox
+     * \param b2 instance třídy BBox
+     * \return BBox vzniknutý sjednocením
      */
     friend BBox unite(const BBox& b, const BBox& b2);
 
-    /**
+    /*!
      * Zjistí, jestli existuje průsečík přímky a BBox.
      * Je také možné získat hodnoty parametrů t.
-     * @param ray paprsek
-     * @param hitt0 slouží k uložení hodnoty prvního parametru průsečíku t
-     * @param hitt1 slouží k uložení hodnoty druhého parametru průsečíku t
-     * @return zdali průsečík protnul BBox
+     * \param ray paprsek
+     * \param hitt0 slouží k uložení hodnoty prvního parametru průsečíku t
+     * \param hitt1 slouží k uložení hodnoty druhého parametru průsečíku t
+     * \return zdali průsečík protnul BBox
      */
     bool intersectP(const Ray& ray, Real* hitt0, Real* hitt1) const;
 
-    /**
+    /*!
      * Lineární interpolace uvnitř BBox mezi body pMin a pMax.
      */
     Vector lerp(Real tx, Real ty, Real tz) const
@@ -481,7 +481,7 @@ public:
     Vector pMax; ///< bod s největšími složkami
 };
 
-/**
+/*!
  * Skalárni součin dvou vektorů.
  */
 inline float dot(const Vector& u, const Vector& v)
@@ -489,7 +489,7 @@ inline float dot(const Vector& u, const Vector& v)
     return u.x * v.x + u.y * v.y + u.z * v.z;
 }
 
-/**
+/*!
  * Vektorový součin dvou vektorů.
  */
 inline Vector cross(const Vector& u, const Vector& v)
@@ -498,7 +498,7 @@ inline Vector cross(const Vector& u, const Vector& v)
                   u.x * v.y - u.y * v.x);
 }
 
-/**
+/*!
  * Vzdálenost dvou bodů.
  */
 inline float distance(const Vector& p1, const Vector& p2)

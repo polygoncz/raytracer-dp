@@ -38,11 +38,15 @@
             <option name="com.jetbrains.cidr.lang.util.OCDeclarationKind" value="DeallocMethod" />
           </class>
         </Objective-C-extensions>
+        <XML>
+          <option name="XML_LEGACY_SETTINGS_IMPORTED" value="true" />
+        </XML>
         <codeStyleSettings language="ObjectiveC">
           <option name="BRACE_STYLE" value="2" />
           <option name="CLASS_BRACE_STYLE" value="2" />
           <option name="ELSE_ON_NEW_LINE" value="true" />
           <indentOptions>
+            <option name="CONTINUATION_INDENT_SIZE" value="4" />
             <option name="SMART_TABS" value="true" />
           </indentOptions>
         </codeStyleSettings>

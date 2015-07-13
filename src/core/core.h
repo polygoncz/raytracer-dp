@@ -16,10 +16,10 @@ namespace tracer
 {
 
 class Point;
-
 class Vector;
-
 class Normal;
+
+class Material;
 
 /*!
  * Datovy typ realnych hodnot. Vychozi hodnota je float.
@@ -122,6 +122,5 @@ inline int round2Int(Real f)
 {
     return static_cast<int>(f + 0.5f);
 }
-
 
 }

@@ -1,28 +1,31 @@
 #pragma once
 
-/**
+namespace tracer
+{
+
+/*!
  * Třída reprezentující barevné hodnoty v prostoru RGB.
  */
 class RGBColor
 {
 public:
-    /**
+    /*!
      * Bezparametrický konstruktor. Všechny složky jsou nastaveny na 0.
      */
     RGBColor()
     { r = g = b = 0.f; }
 
-    /**
+    /*!
      * Konstruktor. Složky jsou nastaveny podle argumentů
-     * @param _r červená složka
-     * @param _g zelená složka
-     * @param _b modrá složka
+     * \param _r červená složka
+     * \param _g zelená složka
+     * \param _b modrá složka
      */
     RGBColor(Real _r, Real _g, Real _b)
             : r(_r), g(_g), b(_b)
     { }
 
-    /**
+    /*!
      * Kopírovací konstruktor
      */
     RGBColor(const RGBColor& c)
@@ -93,18 +96,18 @@ public:
         return *this;
     }
 
-    /**
+    /*!
      * Všechny složky se vynásobí zadanou konstantou.
-     * @param k násobitel
+     * \param k násobitel
      */
     RGBColor operator*(Real k) const
     {
         return RGBColor(r * k, g * k, b * k);
     }
 
-    /**
+    /*!
      * Složky se mezi sebou násobí.
-     * @param k druhá barva
+     * \param k druhá barva
      */
     RGBColor operator*(const RGBColor& k) const
     {
@@ -132,9 +135,9 @@ public:
         return *this;
     }
 
-    /**
+    /*!
      * Umocní jednotlivé složky.
-     * @param c mocnina
+     * \param c mocnina
      */
     void pow(Real c)
     {
@@ -143,11 +146,11 @@ public:
         b = powf(b, c);
     }
 
-    /**
+    /*!
      * Provádí ořez barevných složek na zadaný rozsah. Původní barva zůstane nezměněna.
-     * @param from začátek rozsahu
-     * @param to konec rozsahu
-     * @return ořezaná barva
+     * \param from začátek rozsahu
+     * \param to konec rozsahu
+     * \return ořezaná barva
      */
     RGBColor clamp(Real from = 0.f, Real to = 1.0)
     {
@@ -171,3 +174,5 @@ const RGBColor DARK_GREY(0.3f, 0.3f, 0.3f); ///< konstantanta tmavě šedé barv
 const RGBColor RED(1.0f, 0.f, 0.f); ///< konstantanta červené barvy
 const RGBColor GREEN(0.0f, 1.0f, 0.0f); ///< konstantanta zelené barvy
 const RGBColor BLUE(0.0f, 0.0f, 1.0f); ///< konstantanta modré barvy
+
+}
