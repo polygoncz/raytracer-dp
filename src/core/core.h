@@ -39,19 +39,25 @@ inline T clamp(T val, T from, T to)
 }
 
 /*!
- * Hledá minimum z nabízených hodnot.
+ * Hledá minimum z předaných hodnot.
  * \param t1 první hodnota
  * \param t2 druhá hodnota
  * \return menší ze dvou hodnot
  */
 template<class T>
-inline T min(T t1, T t2)
+inline T min(const T& t1, const T& t2)
 {
     return std::min(t1, t2);
 }
 
+/*!
+ * Hledá maximum z předaných hodnot.
+ * \param t1 první hodnota
+ * \param t2 druhá hodnota
+ * \return menší ze dvou hodnot
+ */
 template<class T>
-inline T max(T t1, T t2)
+inline T max(const T& t1, const T& t2)
 {
     return std::max(t1, t2);
 }
