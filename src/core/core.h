@@ -63,7 +63,7 @@ inline T max(T t1, T t2)
  * \return větší ze dvou hodnot
  */
 template<class T>
-inline T swap(T& a, T& b)
+inline void swap(T& a, T& b)
 {
     std::swap(a, b);
 }
