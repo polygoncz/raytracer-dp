@@ -1,8 +1,5 @@
 #pragma once
 
-#ifndef DIPLOMKA_CORE_H
-#define DIPLOMKA_CORE_H
-
 /*!
  * \file
  * V souboru jsou definovány některé pomocné funkce.
@@ -120,5 +117,3 @@ inline int round2Int(Real f)
 
 
 }
-
-#endif //DIPLOMKA_CORE_H
