@@ -114,7 +114,7 @@ public:
      * Všechny akcelerační struktury dokáží vypočítat průsečík s tělesem.
      * \return true
      */
-    virtual bool canIntersect() const
+    virtual bool canIntersect() const override
     { return true; }
 
     /*!
@@ -122,7 +122,7 @@ public:
      * implementovanou tuto metodu. Aby náhodou nedošlo ke kopírování
      * struktury, tak je metoda reimplementována tak aby nic nedělala.
      */
-    virtual void refine(std::vector<Reference<Primitive>>& refined)
+    virtual void refine(std::vector<Reference<Primitive>>& refined) override
     { return; }
 };
 
