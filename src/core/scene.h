@@ -59,7 +59,7 @@ public:
     std::vector<Light*> lights;
     Film* film;
     Camera* camera;
-    Agreggate* aggregator;
+    AccelerationStructure* aggregator;
 };
 
 }

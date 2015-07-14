@@ -107,7 +107,7 @@ protected:
  * Třída vznikla ze sémantických důvodů jako předek tříd pro implementaci
  * akceleračních struktur.
  */
-class Agreggate : public Primitive
+class AccelerationStructure : public Primitive
 {
 public:
     /*!
